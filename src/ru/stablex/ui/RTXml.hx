@@ -159,6 +159,7 @@ class RTXml {
     public function create (args:Dynamic = null) : Widget {
         if( args != null ){
             this.interp.variables.set("__ui__arguments", args);
+			this.interp.variables.set("_",args);
         }
 
         //create widget instance
@@ -189,6 +190,7 @@ class RTXml {
 
         if( args != null ){
             this.interp.variables.remove("__ui__arguments");
+			this.interp.variables.remove("_");
         }
 
         return cast obj;
